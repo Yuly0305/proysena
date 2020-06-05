@@ -1,0 +1,79 @@
+CREATE DATABASE cpic,
+
+CREATE TABLE admin (
+	id INT PRIMARY KEY,
+	fullname VARCHAR (80), NOT NUL,
+	email VARCHAR (80) NOT NULL,
+	phone VARCHAR(20) NOT NULL,
+	birthdate DATE NOT NULL,
+	photo VARCHAR NOT NULL,
+	password VARCHAR(20) NOT NULL
+	
+);
+
+CREATE TABLE department (
+	id INT PRIMARY KEY,
+	name VARCHAR (80) NOT NULL
+);
+
+CREATE TABLE event (
+	id INT PRIMARY KEY,
+	name VARCHAR (80) NOT NULL,
+	multimedia VARCHAR NOT NULL,
+	description VARCHAR(255) NOT NULL,
+	date_start DATETIME NOT NULL,
+	date_end DATETIME NOT NULL,
+	fk_id_admin INT NOT NULL,
+	FOREIGN KEY (fk_id_admin) REFERENCES admin (id) 
+);
+
+CREATE TABLE program (
+	code INT PRIMARY KEY,
+	name VARCHAR (80) NOT NULL,
+	type_career VARCHAR (20) NOT NULL,
+	description VARCHAR (80) NOT NULL,
+	title_get VARCHAR (15) NOT NULL,
+	level_education VARCHAR (50) NOT NULL,
+	duration VARCHAR (15) NOT NULL,
+	working_day VARCHAR (10) NOT NULL,
+	state BOOLEAN NOT NULL,
+	fk_id_admin INT NOT NULL,
+	fk_id_depto INT NOT NULL,
+	FOREIGN KEY (fk_id_admin) REFERENCES admin (id),
+	FOREIGN KEY (fk_id_depto) REFERENCES department (id) 
+);
+
+
+
+CREATE TABLE municipality (
+	id INT PRIMARY KEY,
+	name VARCHAR (80) NOT NULL,
+	fk_id_depto INT,
+	FOREIGN KEY (fk_id_depto) REFERENCES department (id)
+);
+
+CREATE TABLE offer (
+	id INT PRIMARY KEY,
+	schedule DATETIME NOT NULL,
+	date_inscription DATETIME NOT NULL,
+	requirements VARCHAR (80) NOT NULL,
+	fk_code_prog INT,
+	FOREIGN KEY (fk_code_prog) REFERENCES program (code)
+);
+
+CREATE TABLE trimesters (
+	number INT PRIMARY KEY,
+	date_start DATETIME NOT NULL,
+	date_end DATETIME NOT NULL,
+	fk_id_offer INT,
+	FOREIGN KEY (fk_id_offer) REFERENCES offer (id)
+);
+
+CREATE TABLE levelFormation (
+	id INT PRIMARY KEY,
+	idType INT NOT NULL,
+	duration DATETIME NOT NULL,
+	productive_stage DATETIME NOT NULL,
+	fk_code_prog INT,
+	FOREIGN KEY (fk_code_prog) REFERENCES program (code)
+);
