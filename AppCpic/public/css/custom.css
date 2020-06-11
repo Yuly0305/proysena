@@ -1,0 +1,110 @@
+body{
+  background-color:#fff;
+}
+.bg-custom {
+	background-color: #0E2B39;
+}
+
+.btn-custom {
+	background-color: #FF6C00;
+	color: #F5F4E1;
+	transition: all 0.5s;
+}
+.btn-custom:hover {
+	background-color: #0E2B39;
+	color: #F5F4E1;
+	
+}
+
+.page-item.active .page-link{
+  background-color: #0E2B39;
+    color: #F5F4E1;
+    border: 1px solid #0E2B39;
+}
+
+.page-item .page-link{
+    color: #0E2B39;
+}
+ul.pagination{
+  align-items: center;
+  justify-content: center;
+}
+
+.user-photo{
+  background-position:center;
+  background-size: cover;
+  display:inline-block;
+  height: 45px;
+  width: 42px;
+}
+.dropdown-item:hover,
+.dropdown-item:focus{
+  background-color: #0E2B39;
+  color: #fff;
+}
+
+.card-title {
+	background-color: #FF6C00;
+	color: #F5F4E1;
+	padding: 10px;
+}
+
+.form-search{
+
+  height: calc(1.6em + 0.75rem +2px);
+  padding: 0.37rem 0.75rem;
+  font-size: 0.9rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+}
+.card-img{
+  position: relative;
+  left: 10px
+}
+/*Logo Sena en Home*/
+.sena {
+  margin-left: -150px;
+}
+/*Boton Inicion en Home*/
+.home {
+  font-size: 18px;
+  margin-left: -65px;
+
+}
+.row{
+  position: relative;
+  bottom: -70px;
+}
+.modulos{
+	position: relative;
+	bottom: 60px;
+}
+/*Barra Lateral Izquierda de Modulos*/
+.barra-izq {
+  font-size: 18px;
+  margin-top: -95px;
+}
+/*.enlace {
+  color: #F5F4E1;
+  transition: 0.2s ease-all; 
+}
+.enlace:hover {
+  background-color:#173F53;
+  color: #F5F4E1;
+}*/
+/*Columna*/
+.lista-index {
+  margin-top: -50px;
+  left: 140px;
+}
+.nav-item {
+  right: -250;
+}
+.lista-modulos {
+  left: 170px;
+}
