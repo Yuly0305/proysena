@@ -13,9 +13,9 @@ class Trimester extends Model
     	'offer_id',
     ];
 
-    // public function article(){
-    //     return $this->hasOne('App\Article');
-    // }
+    public function offer(){
+        return $this->belongsTo('App\Offer');
+    }
 
     // public function scopeNames($categories, $q) {
     //     if (trim($q)) {

@@ -12,13 +12,17 @@ class Event extends Model
     	'description',
     	'date_start',
     	'date_end',
-    	'admin_id',
+    	'user_id',
     	'center_id',
     ];
 
-    // public function article(){
-    //     return $this->hasOne('App\Article');
-    // }
+    public function user(){
+        return $this->belongsTo('App\User');
+    }
+
+    public function center(){
+        return $this->belongsTo('App\Center');
+    }
 
     // public function scopeNames($categories, $q) {
     //     if (trim($q)) {

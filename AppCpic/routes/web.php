@@ -16,3 +16,17 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('usuarios', function () {
+    $users = App\User::take(25)->get();
+    foreach ($users as $user) {
+    	echo $user->fullname."<br><hr>";
+    }
+});
+
+Route::resource('users', 'UserController');
+
+Auth::routes();
+
+
+Route::get('/home', 'HomeController@index')->name('home');

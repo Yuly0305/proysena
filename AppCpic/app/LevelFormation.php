@@ -12,9 +12,9 @@ class LevelFormation extends Model
     	'productive_stage',
     ];
 
-    // public function article(){
-    //     return $this->hasOne('App\Article');
-    // }
+    public function program(){
+        return $this->hasOne('App\Program');
+    }
 
     // public function scopeNames($categories, $q) {
     //     if (trim($q)) {

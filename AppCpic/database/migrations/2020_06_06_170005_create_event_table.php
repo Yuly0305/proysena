@@ -20,8 +20,8 @@ class CreateEventTable extends Migration
             $table->text('description');
             $table->date('date_start');
             $table->date('date_end');
-            $table->unsignedBigInteger('admin_id');
-            $table->foreign('admin_id')->references('id')->on('admin');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->unsignedBigInteger('center_id');
             $table->foreign('center_id')->references('id')->on('center');
             $table->timestamps();

@@ -16,7 +16,12 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'fullname', 
+        'email',
+        'phone',
+        'birthdate',
+        'photo',
+        'password',
     ];
 
     /**
@@ -36,4 +41,21 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function event(){
+        return $this->hasMany('App\Event');
+    }
+
+    public function program(){
+        return $this->hasMany('App\Program');
+    }
+
+
+    // public function scopeNames($users, $q) {
+    //     if (trim($q)) {
+    //         $users->where('fullname', 'LIKE', "%$q%")
+    //               ->orWhere('email', 'LIKE', "%$q%")
+    //               ->orWhere('phone', 'LIKE', "%$q%");
+    //     }
+    // }
 }

@@ -13,10 +13,17 @@ class Center extends Model
     	'regional_id',
     ];
 
-    // public function article(){
-    //     return $this->hasOne('App\Article');
-    // }
+    public function regional(){
+        return $this->belongsTo('App\Regional');
+    }
 
+    public function event(){
+        return $this->hasMany('App\Event');
+    }
+
+    public function program(){
+        return $this->hasMany('App\Program');
+    }
     // public function scopeNames($categories, $q) {
     //     if (trim($q)) {
     //         $categories->where('name', 'LIKE', "%$q%");

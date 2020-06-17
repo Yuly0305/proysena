@@ -21,7 +21,7 @@ class ProgramTableSeeder extends Seeder
            'duration' => '24 meses',
            'working_day' => 'Mixta',
            'state' => 1,
-           'admin_id' => 1,
+           'user_id' => 1,
            'center_id' => 1,
            'level_formation_id' => 1,
 

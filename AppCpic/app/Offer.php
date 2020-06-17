@@ -13,9 +13,13 @@ class Offer extends Model
     	'program_id',
     ];
 
-    // public function article(){
-    //     return $this->hasOne('App\Article');
-    // }
+    public function program(){
+        return $this->belongsTo('App\Program');
+    }
+
+     public function trimester(){
+        return $this->hasOne('App\Trimester');
+    }
 
     // public function scopeNames($categories, $q) {
     //     if (trim($q)) {

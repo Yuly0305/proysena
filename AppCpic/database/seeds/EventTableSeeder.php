@@ -17,7 +17,7 @@ class EventTableSeeder extends Seeder
            'description' => 'En el 2020 se realizará la feria tecnológica mas grande de la regional Caldas',
            'date_start' => '2020-07-01',
            'date_end' => '2020-07-04',
-           'admin_id' => 1,
+           'user_id' => 1,
            'center_id' => 1,
            ]);
     }

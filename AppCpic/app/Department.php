@@ -10,9 +10,9 @@ class Department extends Model
     	'name',
     ];
 
-    // public function article(){
-    //     return $this->hasOne('App\Article');
-    // }
+    public function regional(){
+        return $this->hasOne('App\Regional');
+    }
 
     // public function scopeNames($categories, $q) {
     //     if (trim($q)) {
