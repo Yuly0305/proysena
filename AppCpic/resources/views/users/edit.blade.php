@@ -71,25 +71,6 @@
 						</span>
 						@enderror
 					</div>
-          <div class="form-group">
-                        <select name="gender" class="form-control  @error('gender') is-invalid @enderror">
-                            <option value="">Genero...</option>
-                            <option value="Male" @if (old('gender') == 'Male') selected @endif>Hombre</option>
-                            <option value="Female" @if (old('gender') == 'Female') selected @endif>Mujer</option>
-                        </select>
-                </div>
-
-					<div class="form-group">
-						<label for="address">Dirección</label>
-						<input type="text" name="address" class="form-control @error('address') is-invalid @enderror" value="{{ $user->address }}">
-
-
-						@error('address')
-						<span class="invalid-feedback" role="alert">
-							<strong>{{ $message }}</strong>
-						</span>
-						@enderror
-					</div>
 
 					<div class="form-group">
 						<button class="btn btn-block btn-custom btn-upload" type="button">
@@ -101,7 +82,6 @@
 						<div class="text-center @error('photo') is-invalid @enderror">
 							<img id="preview" class="img-thumbnail" src="{{ asset($user->photo) }}" width="120px">
 						</div>
-
 						@error('photo')
 						<span class="invalid-feedback" role="alert">
 							<strong>{{ $message }}</strong>

@@ -30,8 +30,7 @@ class UserRequest extends FormRequest
                 'email'     => 'required|email|unique:users,email,'.$this->id,
                 'phone'     => 'required|numeric',
                 'birthdate' => 'required|date',
-                'photo'     => 'required|image|max:1000',
-                'password'  => 'required|confirmed'
+                'photo'     => 'required|image|max:1000'
             ];
         }else{
             //Form Create

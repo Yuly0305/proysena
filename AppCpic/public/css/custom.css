@@ -67,13 +67,15 @@ ul.pagination{
   left: 10px
 }
 /*Logo Sena en Home*/
-
+.sena {
+  margin-left: -110px;
+}
 /*Boton Inicion en Home*/
-/*.home {
+.home {
   font-size: 18px;
-  margin-left: -65px;
+  margin-left: -30px;
 
-}*/
+}
 .row{
   position: relative;
   bottom: -70px;
@@ -81,6 +83,7 @@ ul.pagination{
 .modulos{
 	position: relative;
 	bottom: 60px;
+
 }
 /*Barra Lateral Izquierda de Modulos*/
 .barra-izq {
@@ -98,11 +101,11 @@ ul.pagination{
 /*Columna*/
 .lista-index {
   margin-top: -50px;
-  left: 140px;
+  left: 100px;
 }
 .nav-item {
   right: -250;
 }
-/*.lista-modulos {
-  left: 170px;
-}*/
+.lista-modulos {
+  left: 90px;
+}

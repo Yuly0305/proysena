@@ -12,9 +12,6 @@
 
 
     <!-- Scripts -->
-
-
-
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -43,7 +40,7 @@
                     <ul class="navbar-nav mr-auto">
                       <li class="nav-item active home">
 
-                        <a  class="nav-link"  href="{{url('dashboard-admin')}}" >
+                        <a  class="nav-link"  href="{{url('home')}}" > | 
                           <i class="fa fa-home"></i>
                           {{__('custom.home')}} </a>
 
@@ -81,11 +78,11 @@
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user()->fullname }} <span class="caret"></span>
                                 <img  class="img-img-thumbnail rounded-circle user-photo " src="{{ asset(Auth::user()->photo)}}" width="40px" alt="">
-                            </a>
+                            </a>  
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                             
-                            <a  class="dropdown-item" href="{{url('users')}}">
+                            <a  class="dropdown-item" href="{{url('mi-perfil')}}">
                               <i class="far fa-user"></i>
                               Mi Perfil
                             </a>
@@ -111,6 +108,10 @@
                             <a  class="dropdown-item" href="{{url('programas')}}">
                               <i class="fa fa-braille"></i>
                               Módulo Programas
+                            </a>
+                             <a  class="dropdown-item" href="{{url('users')}}">
+                              <i class="fa fa-braille"></i>
+                              Módulo Usuarios
                             </a>
                             <a  class="dropdown-item" href="{{url('eventos')}}">
                               <i class="far fa-calendar-alt"></i>

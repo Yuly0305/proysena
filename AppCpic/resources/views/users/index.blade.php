@@ -1,49 +1,105 @@
 @extends('layouts.app')
-@section('title', 'Lista de Usuarios')
-
-
+@section('title','Lista  de Usuarios')
 @section('content')
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
-				<h1><i class="fas fa-users"></i> Lista de Usuarios</h1>
-				<hr>
-				<a href="{{ url('users/create') }}" class="btn btn-custom">
-					<i class="fas fa-plus"></i> 
-					Adicionar Usuario
+
+@yield('content')
+<div class="row">
+	<div class="col-2 bg-custom barra-izq">
+		<ul class="navbar-nav bg-gradient-info sidebar sidebar-dark accordion" id="accordionSidebar">
+			<!-- Divider -->
+			<br>
+			<div class="enlace">
+				<a class="dropdown-item" href="mi-perfil.php">
+					<span class="text-light"><i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400 text-light"></i>Mi Perfil</span>
 				</a>
-				<form action="{{ url('import/excel/users') }}" method="post" enctype="multipart/form-data" style="display: inline-block;">
-					@csrf
-					<input type="file" class="d-none" id="file" name="file" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet">
-					<button type="button" class="btn btn-custom btn-excel">
-						<i class="fa fa-file-excel"></i>
-						Importar Usuarios
-					</button>
-				</form>
-				|
 				
-				<a href="{{ url('generate/pdf/users') }}" class="btn btn-custom">
-					<i class="fas fa-file-pdf"></i> 
-					Reporte PDF
+			</div>
+			<span class="dropdown-divider"></span>
+			<div class="enlace">
+				<a class="dropdown-item" href="users">
+					<span class="text-light mt-1 active"><i class="fa fa-users fa-sm fa-fw mr-2 text-gray-400 text-light"></i>Usuarios</span>
 				</a>
-				<a href="{{ url('generate/excel/users') }}" class="btn btn-custom">
-					<i class="fas fa-file-excel"></i> 
-					Reporte Excel
+			</div>
+			<hr class="dropdown-divider">
+
+			<div class="enlace">
+				<a class="dropdown-item" href="trimestres.php">
+					<span class="text-light mt-1 active"><i class="fa fa-align-left fa-sm fa-fw mr-2 text-gray-400 text-light"></i>Trimestre</span>
 				</a>
-				@csrf
-				<input type="hidden" id="tmodel" value="users">
-				<input type="search" id="qsearch" class="form-search" autocomplete="false" placeholder="Buscar..." autofocus="false">
-				<br><br>
-			{{-- @if (session('message'))
-					<div class="alert alert-success">
-						{{ session('message') }}
-					</div>
-				@endif --}}
-				<div class="loader d-none text-center">
-					<img src="{{ asset('imgs/loader1.gif') }}" width="180px">
-				</div>
-				<br>
-				<table class="table table-striped table-hover">
+			</div>
+			<hr class="dropdown-divider">
+
+			<div class="enlace">
+				<a class="dropdown-item" href="ofertas.php">
+					<span class="text-light mt-1"><i class="fa fa-envelope-open-text fa-sm fa-fw mr-2 text-gray-400 text-light"></i>Ofertas</span>
+				</a>
+			</div>
+			<hr class="dropdown-divider">
+
+			<div class="enlace">
+				<a class="dropdown-item" href="municipios.php">
+					<span class="text-light mt-1"><i class="fas fa-map-marked-alt fa-sm fa-fw mr-2 text-gray-400 text-light"></i>Municipios</span>
+				</a>	
+			</div>
+			<hr class="dropdown-divider">
+
+			<div class="enlace">
+				<a class="dropdown-item" href="n-formacion.php">
+					<span class="text-light mt-1"><i class="fa fa-graduation-cap fa-sm fa-fw mr-2 text-gray-400 text-light"></i>Nivel-Formación</span>
+				</a>
+			</div>
+			<hr class="dropdown-divider">
+
+			<div class="enlace">
+				<a class="dropdown-item" href="programas.php">
+					<span class="text-light mt-1"><i class="fa fa-braille fa-sm fa-fw mr-2 text-gray-400 text-light"></i>Programas</span>
+				</a>
+			</div>
+			<hr class="dropdown-divider">
+			<div class="enlace">
+				<a class="dropdown-item" href="eventos.php">
+					<span class="text-light mt-1"><i class="far fa-calendar-alt fa-sm fa-fw mr-2 text-gray-400 text-light"></i>Eventos</span>
+				</a>
+			</div>
+
+
+
+			<!-- Divider -->
+			<hr class="sidebar-divider d-none d-md-block">
+
+			<!-- Sidebar Toggler (Sidebar) -->
+		      <div class="text-center d-none d-md-inline">
+		        <button class="rounded-circle border-0" id="sidebarToggle"></button>
+		    </div>
+
+		</ul>
+	</div>
+
+	<div class="col-8 lista-index">
+
+		<h1>
+			<i class="fa fa-users"></i> Lista de Usuarios</h1>
+			<hr>
+			<a href="{{ url('users/create') }}" class="btn btn-custom">
+				<i class="fa fa-plus"></i>
+				Adicionar Usuario
+			</a>
+			{{-- <a href="{{ url('generate/pdf/users') }}" class="btn btn-custom">
+				<i class="fa fa-file-pdf"></i>
+				Reporte PDF
+			</a>
+			<a href="{{ url('generate/excel/users') }}" class="btn btn-custom">
+				<i class="fa fa-file-excel"></i>
+				Reporte EXCEL
+			</a> --}}
+			@csrf
+			<input type="search"  class="form-search"  id="qsearch" placeholder="Buscar" autocomplete="off">
+			<br>
+			<div class="loader d-none text-center">
+				<img src="{{asset('imgs/loader.gif')}}" width="60px">
+			</div>
+			<br>
+			<table class="table table-striped table-hover">
 					<thead>
 						<tr>
 							<th>Nombre Completo</th>
@@ -78,8 +134,11 @@
 						@endforeach
 					</tbody>
 				</table>
-					{{ $users->links() }}
-			</div>
+
+			{{$users->links()}}
 		</div>
+
 	</div>
+</div>
+
 @endsection

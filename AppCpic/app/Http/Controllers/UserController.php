@@ -61,13 +61,13 @@ class UserController extends Controller
     	$user->birthdate = $request->birthdate;
 
     	if ($request->hasFile('photo')) {
-    		$file= time().'.'.$request->photo->extension();
-    		$request->photo->move(public_path('imgs'), $file);
-    		$user->photo = 'imgs/'.$file;
-    	}
-    	$user->email_verified_at = now();
-    	$user->password  = bcrypt($request['password']);
-    	$user->remember_token = Str::random(10);
+            $file= time().'.'.$request->photo->extension();
+            $request->photo->move(public_path('imgs'), $file);
+            $user->photo = 'imgs/'.$file;
+        }
+        $user->email_verified_at = now();
+        $user->password  = bcrypt($request['password']);
+        $user->remember_token = Str::random(10);
 
     	if ($user->save()) {
     		return redirect('users')->with('message', 'El administrador: '.$user->fullname.' fue adicionado con exito');
@@ -103,17 +103,21 @@ class UserController extends Controller
 
     public function update(UserRequest $request, $id)
     {
-    	$user = new User;
+    	$user = User::find($id);
     	$user->fullname  = $request->fullname;
     	$user->email     = $request->email;
     	$user->phone     = $request->phone;
     	$user->birthdate = $request->birthdate;
 
     	if ($request->hasFile('photo')) {
-    		$file= time().'.'.$request->photo->extension();
-    		$request->photo->move(public_path('imgs'), $file);
-    		$user->photo = 'imgs/'.$file;
-    	}
+            $file= time().'.'.$request->photo->extension();
+            $request->photo->move(public_path('imgs'), $file);
+            $user->photo = 'imgs/'.$file;
+        }
+        $user->email_verified_at = now();
+        $user->password  = bcrypt($request['password']);
+        $user->remember_token = Str::random(10);
+
     	if ($user->save()) {
     		return redirect('users')->with('message','El administrador '.$user->fullname.' Fue modificado con éxito');
     	}

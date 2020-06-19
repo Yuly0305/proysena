@@ -31,42 +31,6 @@
 					<th>Teléfono:</th>
 					<td>{{ $user->phone }}</td>
 				</tr>
-				<tr>
-					<th>Fecha de Nacimiento:</th>
-					<td> {{ $user->birthdate }}
-	            			&nbsp; | &nbsp;
-	            		@php use \Carbon\Carbon; @endphp
-	            		{{Carbon::createFromDate($user->birthdate)->diff(Carbon::now())->format('%y años, %m mesdías')}}
-            		</td>
-				</tr>
-				<tr>
-					<th>Genero:</th>
-					<td>
-	           			@if ($user->gender == "Female")
-	                           	Mujer
-	          			@else
-	                            Hombre    
-	           			@endif
-	        		</td>
-				</tr>
-				<tr>
-					<th>Estado:</th>
-					<td>
-						@if ($user->status == "1")
-	                   		<span class="btn btn-custom">Activo</span>
-	               		@else
-	                   		<span class="btn btn--custom-danger">Inactivo</span>    
-	               		@endif
-					</td>
-				</tr>
-				<tr>
-					<th>Direccion:</th>
-					<td>{{ $user->address }}</td>
-				</tr>
-				<tr>
-					<th>Contraseña:</th>
-					<td>{{ $user->password }}</td>
-				</tr>
 			</table>
 		</div>
 	</div>

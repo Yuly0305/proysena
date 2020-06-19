@@ -47,13 +47,6 @@
                         </span>
                     @enderror
                 </div>
-			    <div class="form-group">
-                        <select name="gender" class="form-control  @error('gender') is-invalid @enderror">
-                            <option value="">Genero...</option>
-                            <option value="Male" @if (old('gender') == 'Male') selected @endif>Hombre</option>
-                            <option value="Female" @if (old('gender') == 'Female') selected @endif>Mujer</option>
-                        </select>
-                </div>
 
                 <div class="form-group">
                     <button class="btn btn-block btn-custom btn-upload" type="button">
@@ -72,14 +65,6 @@
                     @enderror
                 </div>
 
-                <div class="form-group">
-                        <input type="text" class="form-control @error('address') is-invalid @enderror" name="address"  value="{{ old('address') }}" placeholder="Direccion" >
-                         @error('address')
-                        <span class="invalid-feedback" role="alert">
-                            <strong> {{ $message }}</strong>
-                        </span>
-                    @enderror
-                </div>
                 <div class="form-group">
                     <input type="password" class="form-control @error('password') is-invalid @enderror" name="password"  value="{{ old('password') }}"  placeholder="Contraseña" >
                      @error('password')
